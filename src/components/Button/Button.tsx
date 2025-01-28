@@ -1,34 +1,42 @@
-import React from 'react';
+import { getButtonColors } from "./helpers/colors";
+import { getButtonSize } from "./helpers/size";
 
-import './button.css';
+export type AllowedColors = "teal" | "red" | "cyan";
+export type AllowedSizes = "small" | "medium" | "large";
+export type AllowedButtonTypes = "button" | "submit" | "reset";
 
 export interface ButtonProps {
-  /** Is this the principal call to action on the page? */
-  primary?: boolean;
-  /** What background color to use */
-  backgroundColor?: string;
-  /** How large should the button be? */
-  size?: 'small' | 'medium' | 'large';
-  /** Button contents */
+  customBgColor?: string;
+  customTextColor?: string;
+  size?: AllowedSizes;
+  color?: AllowedColors;
+  type?: AllowedButtonTypes;
   label: string;
-  /** Optional click handler */
   onClick?: () => void;
 }
 
-/** Primary UI component for user interaction */
 export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
+  size = "medium",
+  color = "teal",
+  type = "button",
+  customBgColor,
+  customTextColor,
   label,
   ...props
 }: ButtonProps) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+  const baseClass =
+    "flex items-center justify-center gap-2 font-medium rounded-sm transition ease-linear duration-200 cursor-pointer";
+
+  const colorClass = getButtonColors(color);
+  const sizeClass = getButtonSize(size);
+
+  const buttonClasses = [baseClass, colorClass, sizeClass].join(" ");
+
   return (
     <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
+      type={type}
+      className={buttonClasses}
+      style={{ backgroundColor: customBgColor, color: customTextColor }}
       {...props}
     >
       {label}
