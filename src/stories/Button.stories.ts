@@ -13,6 +13,7 @@ const meta = {
   argTypes: {
     customBgColor: { control: "color" },
     customTextColor: { control: "color" },
+    children: { control: "text" },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
@@ -21,9 +22,29 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Small: Story = {
+export const SolidButton: Story = {
   args: {
-    size: "small",
-    label: "Button",
+    size: "medium",
+    label: "Solid Button",
+    color: "teal",
+    variant: "solid",
+  },
+};
+
+export const OutlinedButton: Story = {
+  args: {
+    size: "medium",
+    label: "Outlined Button",
+    color: "cyan",
+    variant: "outline",
+  },
+};
+
+export const GhostButton: Story = {
+  args: {
+    size: "medium",
+    label: "Ghost Button",
+    color: "red",
+    variant: "ghost",
   },
 };
