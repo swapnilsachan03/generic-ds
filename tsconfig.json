@@ -1,7 +1,28 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "declaration": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react-jsx",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "newLine": "lf",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noEmitOnError": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "pretty": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "esnext",
+    "outDir": "./lib",
+    "rootDirs": ["src"],
+    "skipLibCheck": true
+  },
+  "include": ["src/**/*", "*.d.ts"],
+  "exclude": ["src/**/*.stories.tsx", "src/**/*.stories.ts"]
 }
