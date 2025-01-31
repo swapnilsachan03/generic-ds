@@ -1,53 +1,56 @@
-# React + TypeScript + Vite
+# GenericDS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+GenericDS is an open-source and community maintained compoonent library, aimed to become a generic design system which would enable developers to quickly build scalable, efficient and themed UIs without any hassle.
 
-Currently, two official plugins are available:
+Visit the [GenericDS storybook](https://67991565f629c420de3c41f9-ktrmczhvnx.chromatic.com/?path=/docs/configure-your-project--docs) to explore all the available components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Flexible and themed UI components
+- Community maintained
+- Easy to use and customize
+- Scalable and efficient
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Tech
 
-- Configure the top-level `parserOptions` property like this:
+This project is being built on top of following technologies (these may change as we make progress):
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+- [ReactJS](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [Storybook](https://storybook.js.org/) - An open source tool for developing UI components in isolation for React, Vue, and Angular
+- [Chromatic](https://www.chromatic.com/) - A visual testing platform that helps you catch UI bugs before they reach production
+- [NPM](https://www.npmjs.com/) - A package manager for JavaScript
+- [TypeScript](https://www.typescriptlang.org/) - A typed superset of JavaScript that compiles to plain JavaScript (for type-safety ofc!)
+
+And of course GenericDS itself will be forever open-source at [swapnilsachan03/generic-ds](https://github.com/swapnilsachan03/generic-ds).
+
+## Running locally
+
+```sh
+git clone https://github.com/swapnilsachan03/generic-ds
+cd generic-ds
+npm install
+npm run storybook
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Development
 
-```js
-// eslint.config.js
-import react from "eslint-plugin-react";
+Want to contribute? Great! Here are the steps if this is going to be your first open-source contribution:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: "18.3" } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs["jsx-runtime"].rules,
-  },
-});
-```
+- Fork the repo
+- Create a new branch (`git checkout -b feature/feature-name`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Add some feature'`)
+- Push to the branch (`git push origin feature/feature-name`)
+- Create a Pull Request
+
+Note that the changes you make must be in line with the [conventional commit messages](https://www.conventionalcommits.org/en/v1.0.0/) and the general codebase practices. Then only the PR will be approved and merged.
+
+## License
+
+MIT
+
+**Free Software, Hell Yeah!**
 
 ## Storybook docs & related articles
 
