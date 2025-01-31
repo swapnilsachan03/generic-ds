@@ -1,14 +1,24 @@
 {
   "name": "generic-ds",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": false,
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swapnilsachan03/generic-ds.git"
+  },
+  "author": "Swapnil Sachan <swapnil.sachan2003@gmail.com>",
+  "keywords": [
+    "react",
+    "design-system",
+    "ui"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "npm run clean && npm run build:cjs && npm run build:esm",
     "build:cjs": "tsc",
     "build:esm": "tsc -m es6 --outDir esm",
-    "clean": "rimraf lib/* && rimraf esm/*",
+    "clean": "rimraf lib && rimraf esm",
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
@@ -22,7 +32,7 @@
     "lib"
   ],
   "dependencies": {
-    "@tailwindcss/vite": "^4.0.0",
+    "@tailwindcss/vite": "^4.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -39,7 +49,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.4",
-    "chromatic": "^11.25.1",
+    "chromatic": "^11.25.2",
     "eslint": "^9.19.0",
     "eslint-plugin-react-hooks": "^5.1.0",
     "eslint-plugin-react-refresh": "^0.4.18",
@@ -47,7 +57,7 @@
     "globals": "^15.14.0",
     "rimraf": "^6.0.1",
     "storybook": "^8.5.2",
-    "tailwindcss": "^4.0.0",
+    "tailwindcss": "^4.0.1",
     "typescript": "~5.7.3",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.0.11"
