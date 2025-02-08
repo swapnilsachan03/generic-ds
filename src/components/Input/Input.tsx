@@ -1,4 +1,5 @@
 import React from "react";
+
 import { getInputColors } from "./helpers/colors";
 
 export type InputColor = "teal" | "cyan" | "neutral";
@@ -8,7 +9,6 @@ export type InputVariant = "flushed" | "outline";
 export interface InputProps {
   placeholder: string;
   value: string;
-  onChange: (value: string) => void;
   color?: InputColor;
   variant?: InputVariant;
   type?: InputType;
@@ -21,11 +21,11 @@ export const Input = ({
   color = "neutral",
   variant = "flushed",
   value,
-  onChange,
   type,
   disabled,
   required,
-}: InputProps) => {
+  ...props
+}: InputProps & React.ComponentProps<"input">) => {
   const baseClass =
     "relative w-full p-3 text-[13px] text-black dark:text-white bg-transparent transition ease-linear duration-200 focus:outline-none";
 
@@ -54,10 +54,8 @@ export const Input = ({
       value={value}
       required={required}
       disabled={disabled}
-      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-        onChange(e.target.value)
-      }
       className={inputClass}
+      {...props}
     />
   );
 };

@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   getGhostButtonColors,
   getOutlineButtonColors,
@@ -20,7 +22,6 @@ export interface ButtonProps {
   disabled?: boolean;
   children?: React.ReactNode;
   label: string;
-  onClick?: () => void;
 }
 
 export const Button = ({
@@ -34,7 +35,7 @@ export const Button = ({
   children,
   label,
   ...props
-}: ButtonProps) => {
+}: ButtonProps & React.ComponentProps<"button">) => {
   const baseClass =
     "flex items-center justify-center gap-2 font-medium rounded-sm transition ease-linear duration-200 cursor-pointer";
 
