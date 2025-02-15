@@ -12,6 +12,7 @@ export interface ButtonProps {
   color?: ButtonColor;
   variant?: ButtonVariant;
   disabled?: boolean;
+  isFullWidth?: boolean;
   children?: React.ReactNode;
   label?: string;
   icon?: React.ReactNode;
@@ -22,6 +23,7 @@ export const Button = ({
   color = "neutral",
   variant = "solid",
   disabled = false,
+  isFullWidth = false,
   children,
   label,
   icon,
@@ -35,12 +37,14 @@ export const Button = ({
   const disabledClass = disabled
     ? "opacity-60 pointer-events-none cursor-not-allowed"
     : "";
+  const widthClass = isFullWidth ? "w-full" : "min-w-max";
 
   const buttonClasses = [
     baseClass,
     variantColorClass,
     sizeClass,
     disabledClass,
+    widthClass,
   ].join(" ");
 
   return (

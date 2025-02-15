@@ -11,9 +11,8 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
-    customBgColor: { control: "color" },
-    customTextColor: { control: "color" },
     children: { control: "text" },
+    icon: { control: "select", options: ["search", "plus", "minus"] },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof Button>;
