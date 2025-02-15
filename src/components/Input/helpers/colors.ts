@@ -1,14 +1,9 @@
 import { InputColor } from "../Input";
 
-export const getInputColors = (color: InputColor) => {
-  switch (color) {
-    case "neutral":
-      return "focus:border-neutral-500 dark:focus:border-neutral-300";
-
-    case "teal":
-      return "focus:border-teal-500 dark:focus:border-teal-500";
-
-    case "cyan":
-      return "focus:border-cyan-500 dark:focus:border-cyan-500";
-  }
+export const inputColors: Record<InputColor, string> = {
+  neutral:
+    "focus:border-neutral-500 dark:focus:border-neutral-300 shadow-neutral-500 ring-neutral-500",
+  teal: "focus:border-teal-500 dark:focus:border-teal-500 shadow-teal-500 ring-teal-500",
+  cyan: "focus:border-cyan-500 dark:focus:border-cyan-500 shadow-cyan-500 ring-cyan-500",
+  red: "focus:border-red-500 dark:focus:border-red-500 shadow-red-500 ring-red-500",
 };

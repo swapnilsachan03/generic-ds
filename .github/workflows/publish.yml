@@ -1,4 +1,4 @@
-name: Publish to npm
+name: Publish to npm & chromatic
 
 on:
   push:
@@ -37,3 +37,8 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Run Chromatic
+        uses: chromaui/action@latest
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}

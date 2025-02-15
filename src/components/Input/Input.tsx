@@ -1,63 +1,35 @@
 import React from "react";
 
-import { getInputColors } from "./helpers/colors";
+import { inputColors } from "./helpers/colors";
+import { inputVariants } from "./helpers/variants";
+import { inputSizes } from "./helpers/size";
 
-export type InputColor = "teal" | "cyan" | "neutral";
-export type InputType = "text" | "password" | "email" | "number";
+export type InputColor = "teal" | "cyan" | "red" | "neutral";
+export type InputSize = "small" | "medium" | "large";
 export type InputVariant = "flushed" | "outline";
 
 export interface InputProps {
-  placeholder: string;
-  value: string;
   color?: InputColor;
+  size?: InputSize;
   variant?: InputVariant;
-  type?: InputType;
-  disabled?: boolean;
-  required?: boolean;
 }
 
 export const Input = ({
-  placeholder,
   color = "neutral",
   variant = "flushed",
-  value,
-  type,
-  disabled,
-  required,
+  size = "medium",
   ...props
-}: InputProps & React.ComponentProps<"input">) => {
+}: InputProps & Omit<React.ComponentProps<"input">, "size">) => {
   const baseClass =
-    "relative w-full p-3 text-[13px] text-black dark:text-white bg-transparent transition ease-linear duration-200 focus:outline-none";
+    "relative w-full text-black dark:text-white bg-transparent transition ease-linear duration-200 focus:outline-none";
 
-  let colorClass = "";
+  const colorClass = inputColors[color];
+  const variantClass = inputVariants[variant];
+  const sizeClass = inputSizes[size];
 
-  switch (variant) {
-    case "flushed":
-      colorClass = getInputColors(color).concat(
-        " border-b-[1px] border-b-neutral-300 dark:border-b-neutral-500"
-      );
-      break;
+  const inputClass = [baseClass, colorClass, sizeClass, variantClass].join(" ");
 
-    case "outline":
-      colorClass = getInputColors(color).concat(
-        " border-[1px] rounded-sm border-neutral-300 dark:border-neutral-500"
-      );
-      break;
-  }
-
-  const inputClass = [baseClass, colorClass].join(" ");
-
-  return (
-    <input
-      placeholder={placeholder}
-      type={type}
-      value={value}
-      required={required}
-      disabled={disabled}
-      className={inputClass}
-      {...props}
-    />
-  );
+  return <input className={inputClass} {...props} />;
 };
 
 export default Input;

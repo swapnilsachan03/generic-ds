@@ -13,7 +13,8 @@ const meta = {
   argTypes: {
     placeholder: { control: "text" },
     value: { control: "text" },
-    color: { control: "radio", options: ["teal", "cyan", "neutral"] },
+    size: { control: "radio", options: ["small", "medium", "large"] },
+    color: { control: "radio", options: ["teal", "cyan", "red", "neutral"] },
     variant: { control: "radio", options: ["flushed", "outline"] },
     type: {
       control: "radio",
