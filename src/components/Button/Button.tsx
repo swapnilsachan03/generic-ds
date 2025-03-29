@@ -18,7 +18,7 @@ export interface ButtonProps {
   icon?: React.ReactNode;
 }
 
-export const Button = ({
+const Button = ({
   size = "medium",
   color = "neutral",
   variant = "solid",
@@ -54,3 +54,5 @@ export const Button = ({
     </button>
   );
 };
+
+export default Button;

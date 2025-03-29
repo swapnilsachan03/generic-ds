@@ -14,7 +14,7 @@ export interface InputProps {
   variant?: InputVariant;
 }
 
-export const Input = ({
+const Input = ({
   color = "neutral",
   variant = "flushed",
   size = "medium",

@@ -2,7 +2,7 @@ import { ButtonColor, ButtonVariant } from "../Button";
 
 export const solidButtonColors: Record<ButtonColor, string> = {
   neutral:
-    "bg-neutral-700 hover:bg-black dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black",
+    "bg-black hover:bg-neutral-700 dark:bg-white dark:hover:bg-neutral-300 text-white dark:text-black",
   teal: "bg-teal-600 hover:bg-teal-700 dark:bg-teal-400 dark:hover:bg-teal-500 text-white dark:text-black",
   red: "bg-red-600 hover:bg-red-700 dark:bg-red-400 dark:hover:bg-red-500 text-white dark:text-black",
   cyan: "bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-400 dark:hover:bg-cyan-500 text-white dark:text-black",
