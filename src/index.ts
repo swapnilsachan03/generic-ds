@@ -1,2 +1,2 @@
 import "../dist/tailwind.css";
-export { Button, Input } from "./components";
+export { Button, Input, Skeleton, Collapsible } from "./components";
