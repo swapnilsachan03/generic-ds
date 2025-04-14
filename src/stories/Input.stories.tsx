@@ -1,5 +1,7 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import { Search, Mail, Lock } from "lucide-react";
 
 import { Input } from "../components";
 
@@ -14,7 +16,33 @@ const meta = {
     placeholder: { control: "text" },
     value: { control: "text" },
     size: { control: "radio", options: ["small", "medium", "large"] },
-    color: { control: "radio", options: ["teal", "cyan", "red", "neutral"] },
+    color: {
+      control: "select",
+      options: [
+        "red",
+        "orange",
+        "amber",
+        "yellow",
+        "lime",
+        "green",
+        "emerald",
+        "teal",
+        "cyan",
+        "sky",
+        "blue",
+        "indigo",
+        "violet",
+        "purple",
+        "fuchsia",
+        "pink",
+        "rose",
+        "slate",
+        "gray",
+        "zinc",
+        "neutral",
+        "stone",
+      ],
+    },
     variant: { control: "radio", options: ["flushed", "outline"] },
     type: {
       control: "radio",
@@ -51,5 +79,35 @@ export const OutlinedInput: Story = {
     type: "text",
     disabled: false,
     required: false,
+  },
+};
+
+export const SearchInput: Story = {
+  args: {
+    color: "neutral",
+    variant: "outline",
+    type: "search",
+    placeholder: "Search...",
+    icon: <Search size={16} />,
+  },
+};
+
+export const EmailInput: Story = {
+  args: {
+    color: "teal",
+    variant: "outline",
+    type: "email",
+    placeholder: "Enter your email",
+    icon: <Mail size={16} />,
+  },
+};
+
+export const PasswordInput: Story = {
+  args: {
+    color: "red",
+    variant: "outline",
+    type: "password",
+    placeholder: "Enter your password",
+    icon: <Lock size={16} />,
   },
 };

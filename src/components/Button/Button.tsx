@@ -1,9 +1,9 @@
 import React from "react";
-
+import { Color } from "../shared/types";
 import { variantColorMap } from "./helpers/colors";
 import { buttonSizes } from "./helpers/size";
 
-export type ButtonColor = "teal" | "red" | "cyan" | "neutral";
+export type ButtonColor = Color;
 export type ButtonSize = "small" | "medium" | "large";
 export type ButtonVariant = "solid" | "outline" | "ghost";
 

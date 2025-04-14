@@ -1,6 +1,6 @@
 {
   "name": "generic-ds",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "private": false,
   "type": "module",
   "repository": {
@@ -33,6 +33,11 @@
     "esm",
     "dist"
   ],
+  "peerDependencies": {
+    "lucide-react": "^0.488.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.17",
     "react": "^19.1.0",

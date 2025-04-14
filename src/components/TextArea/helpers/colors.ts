@@ -1,6 +1,6 @@
-import { InputColor } from "../Input";
+import { TextAreaColor } from "../TextArea";
 
-export const inputColors: Record<InputColor, string> = {
+export const textAreaColors: Record<TextAreaColor, string> = {
   neutral:
     "focus:border-neutral-500 dark:focus:border-neutral-300 shadow-neutral-500 ring-neutral-500",
   red: "focus:border-red-500 dark:focus:border-red-500 shadow-red-500 ring-red-500",
