@@ -1,7 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CircleDot } from "lucide-react";
-import Chip from "../components/chip/Chip";
+import Chip from "../components/Chip/Chip";
 
 const meta = {
   title: "Components/Chip",
