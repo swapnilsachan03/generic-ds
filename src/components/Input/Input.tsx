@@ -12,12 +12,14 @@ export interface InputProps {
   color?: InputColor;
   size?: InputSize;
   variant?: InputVariant;
+  icon?: React.ReactNode;
 }
 
 const Input = ({
   color = "neutral",
   variant = "flushed",
   size = "medium",
+  icon,
   ...props
 }: InputProps & Omit<React.ComponentProps<"input">, "size">) => {
   const baseClass =
@@ -29,7 +31,17 @@ const Input = ({
 
   const inputClass = [baseClass, colorClass, sizeClass, variantClass].join(" ");
 
-  return <input className={inputClass} {...props} />;
+  return (
+    <div className="relative flex items-center">
+      {icon && (
+        <div className="absolute left-2 flex items-center justify-center text-neutral-500">
+          {icon}
+        </div>
+      )}
+
+      <input className={`${inputClass} ${icon ? "pl-8" : ""}`} {...props} />
+    </div>
+  );
 };
 
 export default Input;
