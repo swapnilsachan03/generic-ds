@@ -1,9 +1,12 @@
 import React from "react";
+
+import { Color } from "../shared/types";
+
 import { chipColors } from "./helpers/colors";
 import { chipSizes } from "./helpers/size";
 import { chipShapes } from "./helpers/shapes";
 
-export type ChipColor = "teal" | "red" | "cyan" | "neutral";
+export type ChipColor = Color;
 export type ChipSize = "small" | "medium" | "large";
 export type ChipVariant = "solid" | "outline";
 export type ChipShape = "rounded" | "pill";

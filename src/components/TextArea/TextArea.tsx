@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Color } from "../shared/types";
 import { textAreaColors } from "./helpers/colors";
 import { textAreaVariants } from "./helpers/variants";
 import { textAreaSizes } from "./helpers/size";
 
-export type TextAreaColor = "teal" | "cyan" | "red" | "neutral";
+export type TextAreaColor = Color;
 export type TextAreaSize = "small" | "medium" | "large";
 export type TextAreaVariant = "flushed" | "outline";
 

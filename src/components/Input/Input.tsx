@@ -1,10 +1,10 @@
 import React from "react";
-
+import { Color } from "../shared/types";
 import { inputColors } from "./helpers/colors";
 import { inputVariants } from "./helpers/variants";
 import { inputSizes } from "./helpers/size";
 
-export type InputColor = "teal" | "cyan" | "red" | "neutral";
+export type InputColor = Color;
 export type InputSize = "small" | "medium" | "large";
 export type InputVariant = "flushed" | "outline";
 
