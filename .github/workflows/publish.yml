@@ -1,4 +1,4 @@
-name: Publish to npm & chromatic
+name: Publish to npm, chromatic & S3 website
 
 on:
   push:
@@ -44,3 +44,13 @@ jobs:
         uses: chromaui/action@latest
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4.1.0
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-south-1
+
+      - name: Deploy Static Site to S3 Bucket
+        run: aws s3 sync storybook-static/ s3://generic-ds-disk --delete
