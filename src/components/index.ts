@@ -7,6 +7,7 @@ import TextArea from "./TextArea/TextArea";
 import Avatar from "./Avatar/Avatar";
 import AvatarGroup from "./Avatar/AvatarGroup";
 import IconButton from "./IconButton/IconButton";
+import Select from "./Select/Select";
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   Avatar,
   AvatarGroup,
   IconButton,
+  Select,
 };

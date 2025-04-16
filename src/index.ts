@@ -10,4 +10,5 @@ export {
   Chip,
   Avatar,
   AvatarGroup,
+  Select,
 } from "./components";
