@@ -21,6 +21,7 @@ import {
   Terminal,
   Copy,
   Paintbrush,
+  ArrowUpRight,
 } from "lucide-react";
 
 const meta: Meta = {
@@ -46,7 +47,7 @@ export const Home = () => {
 
   return (
     <div className="min-h-screen bg-neutral-100 dark:bg-neutral-900">
-      <div className="max-w-5xl mx-auto px-2 flex flex-col gap-12 py-10">
+      <div className="max-w-5xl mx-auto px-2 flex flex-col gap-12 py-16">
         {/* Header */}
         <section className="text-center">
           <h1 className="text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
@@ -69,7 +70,7 @@ export const Home = () => {
               </a>
               <a href="/?path=/docs/components-button--docs">
                 <Button color="rose">
-                  <RocketIcon className="w-4 h-4 mr-2" /> Explore Components
+                  <ArrowUpRight className="w-4 h-4 mr-2" /> Explore Components
                 </Button>
               </a>
             </div>
