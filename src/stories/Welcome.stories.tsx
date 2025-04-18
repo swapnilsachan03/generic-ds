@@ -50,7 +50,7 @@ export const Home = () => {
         {/* Header */}
         <section className="text-center">
           <h1 className="text-5xl font-bold tracking-tight text-neutral-900 dark:text-white mb-4">
-            generic-ds
+            GenericDS
           </h1>
           <p className="text-xl text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
             A modern, composable, and customizable design system for React.
