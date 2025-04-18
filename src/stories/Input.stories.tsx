@@ -53,7 +53,6 @@ const meta = {
   },
   args: {
     placeholder: "Input",
-    value: "",
     onChange: fn(),
   },
 } satisfies Meta<typeof Input>;
