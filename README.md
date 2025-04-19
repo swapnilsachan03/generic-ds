@@ -1,8 +1,22 @@
 # GenericDS
 
+![alt text](./src/assets/image.png)
+
 GenericDS is an open-source and community maintained component library, aimed to become a generic design system which would enable developers to quickly build scalable, efficient and themed UIs without any hassle.
 
-Visit the [GenericDS storybook](https://67991565f629c420de3c41f9-ktrmczhvnx.chromatic.com/?path=/docs/configure-your-project--docs) to explore all the available components.
+Visit the [GenericDS storybook](https:generic-ds.swapnilsachan.me) to explore all the available components.
+
+Install GenericDS in your project using npm:
+
+```sh
+npm install generic-ds
+```
+
+or yarn:
+
+```sh
+yarn add generic-ds
+```
 
 ## Features
 
