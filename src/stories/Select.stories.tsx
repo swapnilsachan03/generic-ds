@@ -179,3 +179,23 @@ export const States: Story = {
     </div>
   ),
 };
+
+export const Directions: Story = {
+  render: () => (
+    <div className="flex gap-4 items-center">
+      <Select
+        options={sampleOptions}
+        color="blue"
+        direction="bottom"
+        placeholder="Opens Bottom"
+      />
+
+      <Select
+        options={sampleOptions}
+        color="purple"
+        direction="top"
+        placeholder="Opens Top"
+      />
+    </div>
+  ),
+};

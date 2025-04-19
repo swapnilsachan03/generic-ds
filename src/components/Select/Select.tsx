@@ -10,6 +10,7 @@ import { selectSizes, selectOptionSizes } from "./helpers/size";
 export type SelectColor = Color;
 export type SelectSize = "small" | "medium" | "large";
 export type SelectVariant = "solid" | "outline" | "ghost" | "flushed";
+export type SelectDirection = "top" | "bottom";
 
 export interface SelectOption {
   value: string;
@@ -29,6 +30,7 @@ export interface SelectProps {
   showChevron?: boolean;
   customTrigger?: React.ReactNode;
   className?: string;
+  direction?: SelectDirection;
 }
 
 const Select = ({
@@ -44,6 +46,7 @@ const Select = ({
   showChevron = true,
   customTrigger,
   className,
+  direction = "bottom",
 }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [shouldRender, setShouldRender] = useState(false);
@@ -91,14 +94,26 @@ const Select = ({
     : "";
 
   const optionsBaseClass =
-    "absolute w-full mt-1 py-1 bg-white dark:bg-neutral-800 rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700 z-50 transition-all duration-200 ease-in-out";
+    "absolute min-w-full py-1 bg-white dark:bg-neutral-800 rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700 z-50 transition-all duration-200 ease-in-out";
+
+  const optionsPositionClass =
+    direction === "top" ? "bottom-full mb-1" : "top-full mt-1";
 
   const optionsVisibilityClass = isOpen
-    ? "opacity-100 scale-100 translate-y-0"
-    : "opacity-0 scale-95 -translate-y-2";
+    ? "opacity-100 scale-100"
+    : "opacity-0 scale-95";
+
+  const optionsTransformClass =
+    direction === "top"
+      ? isOpen
+        ? "translate-y-0"
+        : "translate-y-2"
+      : isOpen
+      ? "translate-y-0"
+      : "-translate-y-2";
 
   const optionClass = [
-    "text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer transition-colors duration-150",
+    "text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer transition-colors duration-150 truncate",
     selectOptionSizes[size],
   ].join(" ");
 
@@ -123,11 +138,14 @@ const Select = ({
     if (!shouldRender) return null;
 
     return (
-      <div className={`${optionsBaseClass} ${optionsVisibilityClass}`}>
+      <div
+        className={`${optionsBaseClass} ${optionsPositionClass} ${optionsVisibilityClass} ${optionsTransformClass}`}
+      >
         {options.map(option => (
           <div
             key={option.value}
             className={optionClass}
+            title={option.label} // Add tooltip for truncated text
             onClick={() => handleChange(option)}
           >
             {option.label}

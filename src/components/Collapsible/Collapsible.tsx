@@ -32,18 +32,20 @@ const Collapsible: React.FC<CollapsibleProps> & {
 interface TriggerProps {
   children: ReactNode;
   className?: string;
+  showChevron?: boolean;
   chevronPosition?: "left" | "right";
 }
 
 const Trigger: React.FC<TriggerProps> = ({
   children,
   className,
-  chevronPosition,
+  showChevron = true,
+  chevronPosition = "right",
 }) => {
   const context = useContext(CollapsibleContext);
   if (!context) throw new Error("Trigger must be used within a Collapsible");
 
-  const ChevronComponent = chevronPosition && (
+  const ChevronComponent = showChevron && (
     <ChevronDown
       size={14}
       className={`transform transition-transform duration-200 absolute mx-3 ${
@@ -80,7 +82,7 @@ const Content: React.FC<ContentProps> = ({ children, className }) => {
         context.isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
       } ${className}`}
     >
-      <div className="py-3">{children}</div>
+      <div className="pt-2 pb-3">{children}</div>
     </div>
   );
 };
