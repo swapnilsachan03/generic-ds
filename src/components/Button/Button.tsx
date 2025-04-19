@@ -37,7 +37,9 @@ const Button = ({
 
   const variantColorClass = variantColorMap[variant][color];
   const sizeClass = buttonSizes[size];
-  const disabledClass = disabled ? "opacity-60 pointer-events-none" : "";
+  const disabledClass = disabled
+    ? "opacity-60 pointer-events-none"
+    : "cursor-pointer";
   const widthClass = isFullWidth ? "w-full" : "min-w-max";
 
   const buttonClasses = [
@@ -64,7 +66,7 @@ const Button = ({
     );
 
   return (
-    <div className={disabled ? "cursor-not-allowed" : "cursor-pointer"}>
+    <div className={disabled ? "cursor-not-allowed" : ""}>
       <button className={buttonClasses} disabled={disabled} {...props}>
         {icon ? buttonWithIcon : content}
       </button>

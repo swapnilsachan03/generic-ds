@@ -28,7 +28,7 @@ const getInitials = (name: string) => {
 };
 
 const getRandomColor = (): Color => {
-  return COLORS[Math.floor(Math.random() * COLORS.length - 1)];
+  return COLORS[Math.floor(Math.random() * COLORS.length)];
 };
 
 const Avatar = ({
