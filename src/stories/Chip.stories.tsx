@@ -16,7 +16,7 @@ A flexible chip component that supports different shapes, colors, and variants.
 
 **Props:**
 - \`color\`: "neutral" | "teal" | "red" | "cyan"
-- \`size\`: "small" | "medium" | "large"
+- \`size\`: "x-small" | "small" | "medium" | "large"
 - \`variant\`: "solid" | "outline"
 - \`shape\`: "rounded" | "pill"
         `,
@@ -31,7 +31,7 @@ A flexible chip component that supports different shapes, colors, and variants.
     },
     size: {
       control: "radio",
-      options: ["small", "medium", "large"],
+      options: ["x-small", "small", "medium", "large"],
     },
     variant: {
       control: "radio",
