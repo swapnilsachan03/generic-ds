@@ -1,16 +1,30 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
-import { Button } from "../components";
+import { Search, Plus, Minus, ArrowRight, X } from "lucide-react";
+import { IconButton } from "../components";
 
 const meta = {
-  title: "Components/Button",
-  component: Button,
+  title: "Components/IconButton",
+  component: IconButton,
   parameters: {
     layout: "centered",
+    docs: {
+      description: {
+        component: `
+A button variant designed specifically for icons with a square aspect ratio.
+
+**Props:**
+- \`color\`: All colors from the palette
+- \`size\`: "small" | "medium" | "large"
+- \`variant\`: "solid" | "outline" | "ghost"
+- \`icon\`: React.ReactNode - The icon to display
+- \`ariaLabel\`: string - Accessibility label for the button
+        `,
+      },
+    },
   },
   tags: ["autodocs"],
   argTypes: {
-    children: { control: "text" },
     color: {
       control: "select",
       options: [
@@ -40,38 +54,38 @@ const meta = {
     },
     size: { control: "radio", options: ["small", "medium", "large"] },
     variant: { control: "radio", options: ["solid", "outline", "ghost"] },
-    icon: { control: "select", options: ["search", "plus", "minus"] },
   },
-  args: { onClick: fn() },
-} satisfies Meta<typeof Button>;
+} satisfies Meta<typeof IconButton>;
 
 export default meta;
-
 type Story = StoryObj<typeof meta>;
 
-export const SolidButton: Story = {
+export const SolidIconButton: Story = {
   args: {
     size: "medium",
-    label: "Solid Button",
     color: "teal",
     variant: "solid",
+    icon: <Search size={16} />,
+    ariaLabel: "Search",
   },
 };
 
-export const OutlinedButton: Story = {
+export const OutlinedIconButton: Story = {
   args: {
     size: "medium",
-    label: "Outlined Button",
     color: "cyan",
     variant: "outline",
+    icon: <Plus size={16} />,
+    ariaLabel: "Add item",
   },
 };
 
-export const GhostButton: Story = {
+export const GhostIconButton: Story = {
   args: {
     size: "medium",
-    label: "Ghost Button",
     color: "red",
     variant: "ghost",
+    icon: <X size={16} />,
+    ariaLabel: "Close",
   },
 };

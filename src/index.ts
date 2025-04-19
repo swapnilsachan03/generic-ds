@@ -2,6 +2,7 @@ import "../dist/tailwind.css";
 
 export {
   Button,
+  IconButton,
   Input,
   TextArea,
   Skeleton,
@@ -9,4 +10,5 @@ export {
   Chip,
   Avatar,
   AvatarGroup,
+  Select,
 } from "./components";

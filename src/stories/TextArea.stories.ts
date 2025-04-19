@@ -45,10 +45,12 @@ const meta = {
     variant: { control: "radio", options: ["flushed", "outline"] },
     disabled: { control: "boolean" },
     required: { control: "boolean" },
+    resizeX: { control: "boolean" },
+    resizeY: { control: "boolean" },
+    disableResize: { control: "boolean" },
   },
   args: {
     placeholder: "Type something...",
-    value: "",
     onChange: fn(),
   },
 } satisfies Meta<typeof TextArea>;

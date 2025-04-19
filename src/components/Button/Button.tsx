@@ -6,6 +6,7 @@ import { buttonSizes } from "./helpers/size";
 export type ButtonColor = Color;
 export type ButtonSize = "small" | "medium" | "large";
 export type ButtonVariant = "solid" | "outline" | "ghost";
+export type ButtonIconPosition = "left" | "right";
 
 export interface ButtonProps {
   size?: ButtonSize;
@@ -16,6 +17,7 @@ export interface ButtonProps {
   children?: React.ReactNode;
   label?: string;
   icon?: React.ReactNode;
+  iconPosition?: ButtonIconPosition;
 }
 
 const Button = ({
@@ -27,16 +29,15 @@ const Button = ({
   children,
   label,
   icon,
+  iconPosition = "left",
   ...props
 }: ButtonProps & React.ComponentProps<"button">) => {
   const baseClass =
-    "flex items-center justify-center gap-2 font-medium rounded-md transition ease-linear duration-200 cursor-pointer";
+    "flex items-center justify-center gap-2 font-medium rounded-md transition ease-linear duration-200";
 
   const variantColorClass = variantColorMap[variant][color];
   const sizeClass = buttonSizes[size];
-  const disabledClass = disabled
-    ? "opacity-60 pointer-events-none cursor-not-allowed"
-    : "";
+  const disabledClass = disabled ? "opacity-60 pointer-events-none" : "";
   const widthClass = isFullWidth ? "w-full" : "min-w-max";
 
   const buttonClasses = [
@@ -47,11 +48,27 @@ const Button = ({
     widthClass,
   ].join(" ");
 
+  const content = children ? children : label;
+
+  const buttonWithIcon =
+    iconPosition === "left" ? (
+      <>
+        {icon}
+        {content}
+      </>
+    ) : (
+      <>
+        {content}
+        {icon}
+      </>
+    );
+
   return (
-    <button className={buttonClasses} disabled={disabled} {...props}>
-      {icon && icon}
-      {children ? children : label}
-    </button>
+    <div className={disabled ? "cursor-not-allowed" : "cursor-pointer"}>
+      <button className={buttonClasses} disabled={disabled} {...props}>
+        {icon ? buttonWithIcon : content}
+      </button>
+    </div>
   );
 };
 
