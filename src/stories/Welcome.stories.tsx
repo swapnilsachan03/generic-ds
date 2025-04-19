@@ -59,15 +59,16 @@ export const Home = () => {
           </p>
           <div className="mt-6 flex flex-col items-center gap-4">
             <div className="flex gap-4">
-              <a
-                href="https://github.com/swapnilsachan03/generic-ds"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button variant="outline" color="rose">
+              <Button variant="outline" color="rose" disabled={true}>
+                <a
+                  href="https://github.com/swapnilsachan03/generic-ds"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center"
+                >
                   <GithubIcon className="w-4 h-4 mr-2" /> GitHub
-                </Button>
-              </a>
+                </a>
+              </Button>
               <a href="/?path=/docs/components-button--docs">
                 <Button color="rose">
                   <ArrowUpRight className="w-4 h-4 mr-2" /> Explore Components
