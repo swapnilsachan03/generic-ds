@@ -76,7 +76,7 @@ const Select = ({
   }, []);
 
   const baseClass =
-    "relative w-full transition-all duration-200 ease-in-out focus:outline-none font-medium px-3";
+    "flex items-center relative w-full transition-all duration-200 ease-in-out focus:outline-none font-medium px-3";
 
   const colorClass = variantColorMap[variant][color];
   const variantClass = selectVariants[variant];
@@ -154,7 +154,7 @@ const Select = ({
         onClick={() => !disabled && setIsOpen(!isOpen)}
         className={selectClass}
       >
-        <div className="flex items-center justify-between py-1.5">
+        <div className="flex items-center justify-between">
           <span>
             {value
               ? options.find(opt => opt.value === value)?.label
