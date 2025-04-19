@@ -5,3 +5,9 @@ export const selectSizes: Record<SelectSize, string> = {
   medium: "h-8 px-1.5 text-sm",
   large: "h-9 px-2 text-base",
 };
+
+export const selectOptionSizes: Record<SelectSize, string> = {
+  small: "px-3 py-1.5 text-xs",
+  medium: "px-3 py-2 text-sm",
+  large: "px-4 py-2.5 text-base",
+};

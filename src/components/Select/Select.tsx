@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+
 import { Color } from "../shared/types";
+
 import { variantColorMap } from "./helpers/colors";
 import { selectVariants } from "./helpers/variants";
-import { selectSizes } from "./helpers/size";
+import { selectSizes, selectOptionSizes } from "./helpers/size";
 
 export type SelectColor = Color;
 export type SelectSize = "small" | "medium" | "large";
@@ -79,22 +81,26 @@ const Select = ({
   const colorClass = variantColorMap[variant][color];
   const variantClass = selectVariants[variant];
   const sizeClass = selectSizes[size];
+
   const disabledClass = disabled
     ? "opacity-60 cursor-not-allowed"
     : "cursor-pointer";
+
   const requiredClass = required
     ? "after:content-['*'] after:ml-1 after:text-red-500"
     : "";
 
   const optionsBaseClass =
-    "absolute w-full mt-1 py-1 bg-white dark:bg-neutral-800 rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700 z-50 transition-all duration-200 ease-in-out origin-top";
+    "absolute w-full mt-1 py-1 bg-white dark:bg-neutral-800 rounded-md shadow-lg border border-neutral-200 dark:border-neutral-700 z-50 transition-all duration-200 ease-in-out";
 
   const optionsVisibilityClass = isOpen
     ? "opacity-100 scale-100 translate-y-0"
     : "opacity-0 scale-95 -translate-y-2";
 
-  const optionClass =
-    "px-3 py-2.5 text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer transition-colors duration-150";
+  const optionClass = [
+    "text-black dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-700 cursor-pointer transition-colors duration-150",
+    selectOptionSizes[size],
+  ].join(" ");
 
   const selectClass = [
     baseClass,
@@ -108,8 +114,8 @@ const Select = ({
     .filter(Boolean)
     .join(" ");
 
-  const handleChange = (selectedValue: string) => {
-    onChange?.(selectedValue);
+  const handleChange = (selectedOption: SelectOption) => {
+    onChange?.(selectedOption.value);
     setIsOpen(false);
   };
 
@@ -122,7 +128,7 @@ const Select = ({
           <div
             key={option.value}
             className={optionClass}
-            onClick={() => handleChange(option.value)}
+            onClick={() => handleChange(option)}
           >
             {option.label}
           </div>
