@@ -59,7 +59,7 @@ export const Home = () => {
           </p>
           <div className="mt-6 flex flex-col items-center gap-4">
             <div className="flex gap-4">
-              <Button variant="outline" color="rose" disabled={true}>
+              <Button variant="outline" color="rose">
                 <a
                   href="https://github.com/swapnilsachan03/generic-ds"
                   target="_blank"
