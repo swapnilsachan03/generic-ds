@@ -14,7 +14,8 @@ const meta = {
 A collapsible component for showing/hiding content.
 
 **Trigger Props:**
-- \`chevronPosition\`: "left" | "right" | undefined - Position of the chevron icon. If not specified, no chevron will be shown.
+- \`showChevron\`: boolean - Whether to show the chevron icon. Default is true.
+- \`chevronPosition\`: "left" | "right" | undefined - Position of the chevron icon. By default, chevron will be shown on the right.
 - \`className\`: string - Additional CSS classes for the trigger.
 
 **Content Props:**
@@ -41,10 +42,7 @@ export const SingleCollapsible: Story = {
     className: "w-[500px]",
     children: (
       <Collapsible>
-        <Collapsible.Trigger
-          className="flex items-center gap-3 p-3 hover:bg-neutral-500/10 dark:text-white"
-          chevronPosition="right"
-        >
+        <Collapsible.Trigger className="flex items-center gap-3 p-3 hover:bg-neutral-500/10 dark:text-white">
           <Lightbulb size={16} />
           <span>Example Section</span>
         </Collapsible.Trigger>

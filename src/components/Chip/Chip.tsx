@@ -7,7 +7,7 @@ import { chipSizes } from "./helpers/size";
 import { chipShapes } from "./helpers/shapes";
 
 export type ChipColor = Color;
-export type ChipSize = "small" | "medium" | "large";
+export type ChipSize = "x-small" | "small" | "medium" | "large";
 export type ChipVariant = "solid" | "outline";
 export type ChipShape = "rounded" | "pill";
 
@@ -31,8 +31,7 @@ const Chip = ({
   className,
   ...props
 }: ChipProps) => {
-  const baseClass =
-    "inline-flex items-center font-medium transition-colors duration-200";
+  const baseClass = "inline-flex items-center transition-colors duration-200";
   const sizeClass = chipSizes[size];
   const shapeClass = chipShapes[shape];
   const bgClass =

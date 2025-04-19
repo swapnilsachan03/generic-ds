@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { CircleDot } from "lucide-react";
 import Chip from "../components/Chip/Chip";
+import { COLORS } from "../components/shared/types";
 
 const meta = {
   title: "Components/Chip",
@@ -15,7 +16,7 @@ A flexible chip component that supports different shapes, colors, and variants.
 
 **Props:**
 - \`color\`: "neutral" | "teal" | "red" | "cyan"
-- \`size\`: "small" | "medium" | "large"
+- \`size\`: "x-small" | "small" | "medium" | "large"
 - \`variant\`: "solid" | "outline"
 - \`shape\`: "rounded" | "pill"
         `,
@@ -26,34 +27,11 @@ A flexible chip component that supports different shapes, colors, and variants.
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: {
       control: "radio",
-      options: ["small", "medium", "large"],
+      options: ["x-small", "small", "medium", "large"],
     },
     variant: {
       control: "radio",

@@ -2,6 +2,7 @@ import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Search, Plus, Minus, ArrowRight, X } from "lucide-react";
 import { IconButton } from "../components";
+import { COLORS } from "../components/shared/types";
 
 const meta = {
   title: "Components/IconButton",
@@ -27,30 +28,7 @@ A button variant designed specifically for icons with a square aspect ratio.
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: { control: "radio", options: ["small", "medium", "large"] },
     variant: { control: "radio", options: ["solid", "outline", "ghost"] },

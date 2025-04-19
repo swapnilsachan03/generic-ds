@@ -4,6 +4,7 @@ import { fn } from "@storybook/test";
 import { Search, Mail, Lock } from "lucide-react";
 
 import { Input } from "../components";
+import { COLORS } from "../components/shared/types";
 
 const meta = {
   title: "Components/Input",
@@ -18,30 +19,7 @@ const meta = {
     size: { control: "radio", options: ["small", "medium", "large"] },
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     variant: { control: "radio", options: ["flushed", "outline"] },
     type: {

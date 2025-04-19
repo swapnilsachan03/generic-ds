@@ -7,7 +7,7 @@ export const selectSizes: Record<SelectSize, string> = {
 };
 
 export const selectOptionSizes: Record<SelectSize, string> = {
-  small: "px-3 py-1.5 text-xs",
-  medium: "px-3 py-2 text-sm",
-  large: "px-4 py-2.5 text-base",
+  small: "px-3 py-1.5 text-xs max-w-xs",
+  medium: "px-3 py-1.5 text-sm max-w-sm",
+  large: "px-4 py-2 text-base max-w-md",
 };

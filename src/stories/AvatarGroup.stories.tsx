@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import { AvatarGroup } from "../components";
 import { AvatarProps } from "../components/Avatar/Avatar";
+import { COLORS } from "../components/shared/types";
 
 const sampleAvatars: (AvatarProps & { id: string })[] = [
   {
@@ -46,30 +47,7 @@ const meta = {
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: {
       control: "radio",
@@ -157,4 +135,19 @@ export const Shapes: Story = {
       />
     </div>
   ),
+};
+
+export const WithRandomColors: Story = {
+  args: {
+    avatars: [
+      { id: "1", name: "John Doe" },
+      { id: "2", name: "Alice Smith" },
+      { id: "3", name: "Bob Johnson" },
+      { id: "4", name: "Emma Wilson" },
+      { id: "5", name: "James Brown" },
+      { id: "6", name: "Sarah Davis" },
+    ],
+    max: 3,
+    randomizeColor: true,
+  },
 };
