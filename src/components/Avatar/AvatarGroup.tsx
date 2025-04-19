@@ -10,6 +10,7 @@ export interface AvatarGroupProps {
   color?: Color;
   showTooltip?: boolean;
   className?: string;
+  randomizeColor?: boolean;
 }
 
 const AvatarGroup = ({
@@ -20,6 +21,7 @@ const AvatarGroup = ({
   color,
   showTooltip = false,
   className,
+  randomizeColor = false,
 }: AvatarGroupProps) => {
   const displayAvatars = max ? avatars.slice(0, max) : avatars;
   const remainingCount = max ? Math.max(0, avatars.length - max) : 0;
@@ -37,6 +39,7 @@ const AvatarGroup = ({
             size={size}
             shape={shape}
             color={color || avatar.color}
+            randomizeColor={randomizeColor}
             {...avatar}
           />
         </div>
@@ -60,6 +63,7 @@ const AvatarGroup = ({
             color={color || "neutral"}
             name={`+${remainingCount}`}
             fallback="initials"
+            randomizeColor={randomizeColor}
           />
         </div>
       )}

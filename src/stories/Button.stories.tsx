@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Button } from "../components";
 import { Search, Plus, ArrowRight } from "lucide-react";
+import { COLORS } from "../components/shared/types";
 
 const meta = {
   title: "Components/Button",
@@ -40,30 +41,7 @@ A versatile button component that supports different variants, sizes, colors, an
     children: { control: "text" },
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: { control: "radio", options: ["small", "medium", "large"] },
     variant: { control: "radio", options: ["solid", "outline", "ghost"] },

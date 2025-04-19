@@ -1,6 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Avatar } from "../components";
+import { COLORS } from "../components/shared/types";
 
 const meta = {
   title: "Components/Avatar/Avatar",
@@ -12,30 +13,7 @@ const meta = {
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: {
       control: "radio",
@@ -121,6 +99,18 @@ export const Fallbacks: Story = {
     <div className="flex gap-4 items-center">
       <Avatar name="John Doe" fallback="initials" color="blue" />
       <Avatar fallback="icon" color="blue" />
+    </div>
+  ),
+};
+
+export const WithRandomColors: Story = {
+  render: () => (
+    <div className="flex gap-4 items-center">
+      <Avatar name="John Doe" randomizeColor />
+      <Avatar name="Alice Smith" randomizeColor />
+      <Avatar name="Bob Wilson" randomizeColor />
+      <Avatar name="Emma Brown" randomizeColor />
+      <Avatar name="James Lee" randomizeColor />
     </div>
   ),
 };

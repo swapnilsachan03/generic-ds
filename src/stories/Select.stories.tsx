@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 import { Select, Button } from "../components";
 import { ChevronDown } from "lucide-react";
+import { COLORS } from "../components/shared/types";
 
 const sampleOptions = [
   { value: "1", label: "Option 1" },
@@ -39,30 +40,7 @@ A customizable select dropdown component that supports different variants, sizes
   argTypes: {
     color: {
       control: "select",
-      options: [
-        "red",
-        "orange",
-        "amber",
-        "yellow",
-        "lime",
-        "green",
-        "emerald",
-        "teal",
-        "cyan",
-        "sky",
-        "blue",
-        "indigo",
-        "violet",
-        "purple",
-        "fuchsia",
-        "pink",
-        "rose",
-        "slate",
-        "gray",
-        "zinc",
-        "neutral",
-        "stone",
-      ],
+      options: COLORS,
     },
     size: { control: "radio", options: ["small", "medium", "large"] },
     variant: {
