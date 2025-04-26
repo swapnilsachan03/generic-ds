@@ -39,39 +39,39 @@ export const solidSelectColors: Record<SelectColor, string> = {
 
 export const outlineSelectColors: Record<SelectColor, string> = {
   neutral:
-    "border-[1px] border-black dark:border-white hover:bg-neutral-400/10 text-black dark:text-white",
-  red: "border-[1px] border-red-600 dark:border-red-400 hover:bg-red-400/10 text-red-600 dark:text-red-400",
+    "border-[1px] !border-black dark:border-!white hover:bg-neutral-400/10 text-black dark:text-white",
+  red: "border-[1px] !border-red-600 dark:!border-red-400 hover:bg-red-400/10 text-red-600 dark:text-red-400",
   orange:
-    "border-[1px] border-orange-600 dark:border-orange-400 hover:bg-orange-400/10 text-orange-600 dark:text-orange-400",
+    "border-[1px] !border-orange-600 dark:!border-orange-400 hover:bg-orange-400/10 text-orange-600 dark:text-orange-400",
   amber:
-    "border-[1px] border-amber-600 dark:border-amber-400 hover:bg-amber-400/10 text-amber-600 dark:text-amber-400",
+    "border-[1px] !border-amber-600 dark:!border-amber-400 hover:bg-amber-400/10 text-amber-600 dark:text-amber-400",
   yellow:
-    "border-[1px] border-yellow-600 dark:border-yellow-400 hover:bg-yellow-400/10 text-yellow-600 dark:text-yellow-400",
-  lime: "border-[1px] border-lime-600 dark:border-lime-400 hover:bg-lime-400/10 text-lime-600 dark:text-lime-400",
+    "border-[1px] !border-yellow-600 dark:!border-yellow-400 hover:bg-yellow-400/10 text-yellow-600 dark:text-yellow-400",
+  lime: "border-[1px] !border-lime-600 dark:!border-lime-400 hover:bg-lime-400/10 text-lime-600 dark:text-lime-400",
   green:
-    "border-[1px] border-green-600 dark:border-green-400 hover:bg-green-400/10 text-green-600 dark:text-green-400",
+    "border-[1px] !border-green-600 dark:!border-green-400 hover:bg-green-400/10 text-green-600 dark:text-green-400",
   emerald:
-    "border-[1px] border-emerald-600 dark:border-emerald-400 hover:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400",
-  teal: "border-[1px] border-teal-600 dark:border-teal-400 hover:bg-teal-400/10 text-teal-600 dark:text-teal-400",
-  cyan: "border-[1px] border-cyan-600 dark:border-cyan-400 hover:bg-cyan-400/10 text-cyan-600 dark:text-cyan-400",
-  sky: "border-[1px] border-sky-600 dark:border-sky-400 hover:bg-sky-400/10 text-sky-600 dark:text-sky-400",
-  blue: "border-[1px] border-blue-600 dark:border-blue-400 hover:bg-blue-400/10 text-blue-600 dark:text-blue-400",
+    "border-[1px] !border-emerald-600 dark:!border-emerald-400 hover:bg-emerald-400/10 text-emerald-600 dark:text-emerald-400",
+  teal: "border-[1px] !border-teal-600 dark:!border-teal-400 hover:bg-teal-400/10 text-teal-600 dark:text-teal-400",
+  cyan: "border-[1px] !border-cyan-600 dark:!border-cyan-400 hover:bg-cyan-400/10 text-cyan-600 dark:text-cyan-400",
+  sky: "border-[1px] !border-sky-600 dark:!border-sky-400 hover:bg-sky-400/10 text-sky-600 dark:text-sky-400",
+  blue: "border-[1px] !border-blue-600 dark:!border-blue-400 hover:bg-blue-400/10 text-blue-600 dark:text-blue-400",
   indigo:
-    "border-[1px] border-indigo-600 dark:border-indigo-400 hover:bg-indigo-400/10 text-indigo-600 dark:text-indigo-400",
+    "border-[1px] !border-indigo-600 dark:!border-indigo-400 hover:bg-indigo-400/10 text-indigo-600 dark:text-indigo-400",
   violet:
-    "border-[1px] border-violet-600 dark:border-violet-400 hover:bg-violet-400/10 text-violet-600 dark:text-violet-400",
+    "border-[1px] !border-violet-600 dark:!border-violet-400 hover:bg-violet-400/10 text-violet-600 dark:text-violet-400",
   purple:
-    "border-[1px] border-purple-600 dark:border-purple-400 hover:bg-purple-400/10 text-purple-600 dark:text-purple-400",
+    "border-[1px] !border-purple-600 dark:!border-purple-400 hover:bg-purple-400/10 text-purple-600 dark:text-purple-400",
   fuchsia:
-    "border-[1px] border-fuchsia-600 dark:border-fuchsia-400 hover:bg-fuchsia-400/10 text-fuchsia-600 dark:text-fuchsia-400",
-  pink: "border-[1px] border-pink-600 dark:border-pink-400 hover:bg-pink-400/10 text-pink-600 dark:text-pink-400",
-  rose: "border-[1px] border-rose-600 dark:border-rose-400 hover:bg-rose-400/10 text-rose-600 dark:text-rose-400",
+    "border-[1px] !border-fuchsia-600 dark:!border-fuchsia-400 hover:bg-fuchsia-400/10 text-fuchsia-600 dark:text-fuchsia-400",
+  pink: "border-[1px] !border-pink-600 dark:!border-pink-400 hover:bg-pink-400/10 text-pink-600 dark:text-pink-400",
+  rose: "border-[1px] !border-rose-600 dark:!border-rose-400 hover:bg-rose-400/10 text-rose-600 dark:text-rose-400",
   slate:
-    "border-[1px] border-slate-600 dark:border-slate-400 hover:bg-slate-400/10 text-slate-600 dark:text-slate-400",
-  gray: "border-[1px] border-gray-600 dark:border-gray-400 hover:bg-gray-400/10 text-gray-600 dark:text-gray-400",
-  zinc: "border-[1px] border-zinc-600 dark:border-zinc-400 hover:bg-zinc-400/10 text-zinc-600 dark:text-zinc-400",
+    "border-[1px] !border-slate-600 dark:!border-slate-400 hover:bg-slate-400/10 text-slate-600 dark:text-slate-400",
+  gray: "border-[1px] !border-gray-600 dark:!border-gray-400 hover:bg-gray-400/10 text-gray-600 dark:text-gray-400",
+  zinc: "border-[1px] !border-zinc-600 dark:!border-zinc-400 hover:bg-zinc-400/10 text-zinc-600 dark:text-zinc-400",
   stone:
-    "border-[1px] border-stone-600 dark:border-stone-400 hover:bg-stone-400/10 text-stone-600 dark:text-stone-400",
+    "border-[1px] !border-stone-600 dark:!border-stone-400 hover:bg-stone-400/10 text-stone-600 dark:text-stone-400",
 };
 
 export const ghostSelectColors: Record<SelectColor, string> = {
@@ -144,4 +144,5 @@ export const variantColorMap: Record<
   outline: outlineSelectColors,
   ghost: ghostSelectColors,
   flushed: flushedSelectColors,
+  "outline-input": outlineSelectColors,
 };

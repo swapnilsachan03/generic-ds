@@ -9,7 +9,12 @@ import { selectSizes, selectOptionSizes } from "./helpers/size";
 
 export type SelectColor = Color;
 export type SelectSize = "small" | "medium" | "large";
-export type SelectVariant = "solid" | "outline" | "ghost" | "flushed";
+export type SelectVariant =
+  | "solid"
+  | "outline"
+  | "outline-input"
+  | "ghost"
+  | "flushed";
 export type SelectDirection = "top" | "bottom";
 
 export interface SelectOption {
@@ -81,7 +86,10 @@ const Select = ({
   const baseClass =
     "flex items-center relative w-full transition-all duration-200 ease-in-out focus:outline-none font-medium px-3";
 
-  const colorClass = variantColorMap[variant][color];
+  const colorClass =
+    variant !== "outline-input" || isOpen
+      ? variantColorMap[variant][color]
+      : "";
   const variantClass = selectVariants[variant];
   const sizeClass = selectSizes[size];
 
@@ -119,15 +127,13 @@ const Select = ({
 
   const selectClass = [
     baseClass,
-    colorClass,
     variantClass,
+    colorClass,
     sizeClass,
     disabledClass,
     requiredClass,
     className,
-  ]
-    .filter(Boolean)
-    .join(" ");
+  ].join(" ");
 
   const handleChange = (selectedOption: SelectOption) => {
     onChange?.(selectedOption.value);
@@ -172,7 +178,7 @@ const Select = ({
         onClick={() => !disabled && setIsOpen(!isOpen)}
         className={selectClass}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between w-full">
           <span>
             {value
               ? options.find(opt => opt.value === value)?.label

@@ -1,8 +1,7 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
-import { Select, Button } from "../components";
-import { ChevronDown } from "lucide-react";
+import { Select } from "../components";
 import { COLORS } from "../components/shared/types";
 
 const sampleOptions = [
@@ -45,7 +44,7 @@ A customizable select dropdown component that supports different variants, sizes
     size: { control: "radio", options: ["small", "medium", "large"] },
     variant: {
       control: "radio",
-      options: ["solid", "outline", "ghost", "flushed"],
+      options: ["solid", "outline", "ghost", "flushed", "outline-input"],
     },
     placeholder: { control: "text" },
     disabled: { control: "boolean" },
@@ -65,30 +64,6 @@ export const SolidSelect: Story = {
   args: {
     color: "teal",
     variant: "solid",
-    placeholder: "Select an option",
-  },
-};
-
-export const OutlinedSelect: Story = {
-  args: {
-    color: "blue",
-    variant: "outline",
-    placeholder: "Select an option",
-  },
-};
-
-export const GhostSelect: Story = {
-  args: {
-    color: "purple",
-    variant: "ghost",
-    placeholder: "Select an option",
-  },
-};
-
-export const FlushedSelect: Story = {
-  args: {
-    color: "red",
-    variant: "flushed",
     placeholder: "Select an option",
   },
 };
@@ -119,6 +94,12 @@ export const Variants: Story = {
         variant="flushed"
         color="red"
         placeholder="Flushed"
+      />
+      <Select
+        options={sampleOptions}
+        variant="outline-input"
+        color="fuchsia"
+        placeholder="Outline Input"
       />
     </div>
   ),
