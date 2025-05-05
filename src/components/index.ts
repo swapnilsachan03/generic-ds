@@ -8,6 +8,8 @@ import Avatar from "./Avatar/Avatar";
 import AvatarGroup from "./Avatar/AvatarGroup";
 import IconButton from "./IconButton/IconButton";
 import Select from "./Select/Select";
+import Table from "./Table/Table";
+import type { TableColumn } from "./Table/Table";
 
 export {
   Button,
@@ -20,4 +22,6 @@ export {
   AvatarGroup,
   IconButton,
   Select,
+  Table,
+  TableColumn,
 };
