@@ -11,4 +11,6 @@ export {
   Avatar,
   AvatarGroup,
   Select,
+  Table,
+  TableColumn,
 } from "./components";
