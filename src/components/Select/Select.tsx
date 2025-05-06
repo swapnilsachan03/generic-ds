@@ -89,7 +89,7 @@ const Select = ({
   const colorClass =
     variant !== "outline-input" || isOpen
       ? variantColorMap[variant][color]
-      : "";
+      : "text-neutral-500";
   const variantClass = selectVariants[variant];
   const sizeClass = selectSizes[size];
 
